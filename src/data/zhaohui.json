@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "title": "电子",
+            "games": [
+                {
+                    "gameId": 1001,
+                    "gameName": "WG",
+                    "gameIcon": "/src/assets/images/logo/16_N_BG_LOGO.avif",
+                    "banlance": 15
+                },
+                {
+                    "gameId": 1002,
+                    "gameName": "BG",
+                    "gameIcon": "/src/assets/images/logo/16_N_BG_LOGO.avif",
+                    "banlance": 0
+                },
+                {
+                    "gameId": 1003,
+                    "gameName": "WL",
+                    "gameIcon": "/src/assets/images/logo/52_N_WL_LOGO.avif",
+                    "banlance": 0
+                }
+            ]
+            
+        },
+        {
+            "id": 1,
+            "title": "真人",
+            "games": []
+        },
+        {
+            "id": 2,
+            "title": "棋牌",
+            "games": []
+        },
+        {
+            "id": 3,
+            "title": "捕鱼",
+            "games": []
+        }
+    ]
+}

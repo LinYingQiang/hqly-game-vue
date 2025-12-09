@@ -1,0 +1,22 @@
+{
+    "data": [
+        {
+            "platformId": 0,
+            "icon": "/src/assets/images/logo/10_N_AG_LOGO.avif",
+            "name": "PA",
+            "toLink": "www.baidu.com"
+        },
+        {
+            "platformId": 1,
+            "icon": "src/assets/images/logo/16_N_BG_LOGO.avif",
+            "name": "BG",
+            "toLink": "www.baidu.com"
+        },
+        {
+            "platformId": 2,
+            "icon": "src/assets/images/logo/52_N_WL_LOGO.avif",
+            "name": "WL",
+            "toLink": "www.baidu.com"
+        }
+    ]
+}

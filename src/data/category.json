@@ -1,0 +1,138 @@
+{
+    "data": [
+        {
+            "name": "热门",
+            "icon": "/src/assets/images/category/hot.avif",
+            "categoryId": 0,
+            "platforms": [
+                {
+                    "platformId": 0,
+                    "icon": "/src/assets/images/logo/10_N_AG_LOGO.avif",
+                    "name": "PA",
+                    "games": [
+                        {
+                            "gameId": 0,
+                            "name": "游戏1",
+                            "icon": "/src/assets/images/game/custom.avif",
+                            "toLink": "www.baidu.com"
+                        },
+                        {
+                            "gameId": 1,
+                            "name": "游戏2",
+                            "icon": "/src/assets/images/game/game2.avif",
+                            "toLink": "www.baidu.com"
+                        }
+                    ]
+                },
+                {
+                    "platformId": 1,
+                    "icon": "/src/assets/images/logo/16_N_BG_LOGO.avif",
+                    "name": "BG",
+                    "games": [
+                        {
+                            "gameId": 0,
+                            "name": "游戏1",
+                            "icon": "/src/assets/images/game/game3.avif",
+                            "toLink": "www.baidu.com"
+                        },
+                        {
+                            "gameId": 1,
+                            "name": "游戏2",
+                            "icon": "/src/assets/images/game/game4.avif",
+                            "toLink": "www.baidu.com"
+                        }
+                    ]
+                },
+                {
+                    "platformId": 2,
+                    "icon": "/src/assets/images/logo/52_N_WL_LOGO.avif",
+                    "name": "WL",
+                    "games": [
+                        {
+                            "gameId": 0,
+                            "name": "游戏1",
+                            "icon": "/src/assets/images/game/game2.avif",
+                            "toLink": "www.baidu.com"
+                        },
+                        {
+                            "gameId": 1,
+                            "name": "游戏2",
+                            "icon": "/src/assets/images/game/game3.avif",
+                            "toLink": "www.baidu.com"
+                        }
+                    ]
+                },
+                {
+                    "platformId": 3,
+                    "icon": "/src/assets/images/logo/52_N_WL_LOGO.avif",
+                    "name": "WL",
+                    "games": [
+                        {
+                            "gameId": 0,
+                            "name": "游戏1",
+                            "icon": "/src/assets/images/game/game2.avif",
+                            "toLink": "www.baidu.com"
+                        },
+                        {
+                            "gameId": 1,
+                            "name": "游戏2",
+                            "icon": "/src/assets/images/game/game3.avif",
+                            "toLink": "www.baidu.com"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "电子",
+            "icon": "/src/assets/images/category/dianzi.avif",
+            "categoryId": 1,
+            "platforms":[]
+        },{
+            "name": "真人",
+            "icon": "/src/assets/images/category/zhenren.avif",
+            "categoryId": 2,
+            "platforms": []
+        },{
+            "name": "棋牌",
+            "icon": "/src/assets/images/category/qipai.avif",
+            "categoryId": 3,
+            "platforms": []
+        },{
+            "name": "捕鱼",
+            "icon": "/src/assets/images/category/buyu.avif",
+            "categoryId": 4,
+            "platforms": []
+        },{
+            "name": "彩票",
+            "icon": "/src/assets/images/category/caipiao.avif",
+            "categoryId": 5,
+            "platforms": []
+        },{
+            "name": "体育",
+            "icon": "/src/assets/images/category/tiyu.avif",
+            "categoryId": 6,
+            "platforms": []
+        },{
+            "name": "电竞",
+            "icon": "/src/assets/images/category/dianjing.avif",
+            "categoryId": 7,
+            "platforms": []
+        },{
+            "name": "区块链",
+            "icon": "/src/assets/images/category/qukuailian.avif",
+            "categoryId": 8,
+            "platforms": []
+        },{
+            "name": "最近",
+            "icon": "/src/assets/images/category/zuijin.avif",
+            "categoryId": 9,
+            "platforms": []
+        },{
+            "name": "收藏",
+            "icon": "/src/assets/images/category/shoucang.avif",
+            "categoryId": 10,
+            "platforms": []
+        }
+    ]
+}

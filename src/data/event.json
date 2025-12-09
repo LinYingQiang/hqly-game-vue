@@ -1,0 +1,72 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "综合",
+            "events": [
+                {
+                    "eventId": 1,
+                    "name": "新年活动",
+                    "img": "/src/assets/images/game/event1.avif",
+                    "templateId": 1
+                },
+                {
+                    "eventId": 2,
+                    "name": "新年活动",
+                    "img": "/src/assets/images/game/event2.avif",
+                    "templateId": 1
+                },
+                {
+                    "eventId": 3,
+                    "name": "新年活动",
+                    "img": "/src/assets/images/game/event3.avif",
+                    "templateId": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "新人",
+            "events": [
+                {
+                    "eventId": 1,
+                    "name": "新年活动",
+                    "img": "/src/assets/images/game/event1.avif",
+                    "templateId": 1
+                },
+                {
+                    "eventId": 2,
+                    "name": "新年活动",
+                    "img": "/src/assets/images/game/event2.avif",
+                    "templateId": 1
+                },
+                {
+                    "eventId": 3,
+                    "name": "新年活动",
+                    "img": "/src/assets/images/game/event3.avif",
+                    "templateId": 1
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "代理",
+            "events": []
+        },
+        {
+            "id": 4,
+            "name": "电子",
+            "events": []
+        },
+        {
+            "id": 5,
+            "name": "真人",
+            "events": []
+        },
+        {
+            "id": 6,
+            "name": "棋牌",
+            "events": []
+        }
+    ]
+}

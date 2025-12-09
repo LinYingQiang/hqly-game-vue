@@ -1,0 +1,173 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --van-search-background: #1c1e23!important;
+  --van-search-content-background: #22242a!important;
+  --van-notice-bar-background: rgba(0, 0, 0, 0)!important;
+  --van-nav-bar-background: #1c1e23!important;
+  --van-cell-background: #1c1e23!important;
+  --van-popup-background: #1c1e23!important;
+  --van-nav-bar-title-text-color: #ffffff!important;
+}
+
+/* ----- 居中竖屏（仿 lobby ui contain）样式 -----
+/* 设置一些默认的 lobby 变量：最大内容宽度与 rem 基准 */
+:root {
+  --lobby__max-width: 512px; /* 手机竖屏宽度（可根据需要调整为 375/390 等） */
+  --lobby__rem-unit: 16; /* 设计稿 rem 基准 */
+}
+
+/* 当 html 带上 data-ui-contain=1 时，限制最大宽度并水平居中，按设计稿比例缩放根字体 */
+html[data-ui-contain="1"] {
+  max-width: var(--lobby__max-width);
+  margin: 0 auto;
+  font-size: calc(var(--lobby__max-width) / (750 / var(--lobby__rem-unit))) !important;
+  background: #313843;
+}
+
+html[data-ui-contain="1"] body {
+    width: 100%!important
+}
+
+/* 使某些固定在视口的元素受限制宽度约束，不再黏贴到窗口最左侧 */
+html[data-ui-contain="1"] .wg-fixed-no-desktop,
+html[data-ui-contain="1"] #nprogress {
+  max-width: var(--lobby__max-width);
+  margin: 0 auto;
+  left: auto !important;
+}
+
+html[dir=rtl][data-ui-contain="1"] .wg-fixed-no-desktop,
+html[dir=rtl][data-ui-contain="1"] #nprogress {
+  left: auto !important;
+  right: auto !important;
+}
+
+/* 将 body 宽度限定为 100%（在被限制的 html 内部） */
+html[data-ui-contain="1"] body {
+  width: 100% !important;
+}
+
+/* 隐藏在预览模式下的悬浮控件（如果存在） */
+html[data-preview-mode="1"] .ui-overlay,
+html[data-preview-mode="1"] .float-bar-main,
+html[data-preview-mode="1"] #ukefu-point,
+html[data-preview-mode="1"] #chat-widget-container,
+html[data-preview-mode="1"] #meiqia-container,
+html[data-preview-mode="1"] #icEntry {
+  display: none !important;
+}
+
+/* 当在桌面且启用 micro app 模式时隐藏滚动条（可选） */
+html[data-isTGMicroApp="1"][data-isdesktop="1"] ::-webkit-scrollbar {
+  width: 0px !important;
+}
+
+/* 兼容：当我们在 PC（非移动）上启用 data-ui-contain 时，把 .pc-viewport 设为居中容器 */
+.pc-viewport {
+  margin: 0 auto;
+}
+
+/* 限制侧边弹窗（van-popup）在 pc-viewport 内显示时的宽度，避免占满整屏 */
+.pc-viewport .van-popup__content {
+  max-width: 320px;
+}
+
+/* ----- Vant dark theme variables (覆盖) -----
+   Apply dark CSS variable overrides when html[data-theme="dark"] or .van-dark is present.
+*/
+html[data-theme="dark"], .van-dark {
+  --van-primary-color: #f0c059;
+  --van-link-color: #f0c059;
+  --van-text-color: #ffffff;
+  --van-text-color-secondary: rgba(255,255,255,0.75);
+  --van-white: #ffffff;
+  --van-black: #000000;
+  --van-background-color: #1d1f24;
+  --van-component-background: #1d1f24;
+  --van-popup-background: #1c1e23;
+  --van-toast-background: rgba(0,0,0,0.6);
+  --van-border-color: rgba(255,255,255,0.06);
+  --van-disabled-color: rgba(255,255,255,0.24);
+  --van-placeholder-color: rgba(255,255,255,0.4);
+  --van-success-color: #00c37a;
+  --van-danger-color: #ff4d4f;
+  --van-tabs-bottom-bar-color: var(--van-primary-color);
+  --van-search-content-background-color: #1c1e23;
+}
+
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  max-height: 100vh;
+}
+
+h1 {
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #313843;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
