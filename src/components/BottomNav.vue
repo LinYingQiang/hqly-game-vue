@@ -6,7 +6,7 @@
       :class="['nav-item', { active: $route.name === item.route }]"
       @click="goTo(item.route)"
     >
-      <van-icon :name="item.icon" :color="$route.name === item.route ? activeColor : defaultColor" size="24" />
+      <van-icon :name="item.icon" :color="$route.name === item.route ? activeColor : defaultColor" size="24" style="font-size: 1.4rem;"/>
       <span :style="{ color: $route.name === item.route ? activeColor : defaultColor }">{{ item.label }}</span>
     </div>
   </nav>
@@ -95,7 +95,7 @@ function goTo(routeName) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 18px;
+    font-size: 1.1rem;
     color: white;
     cursor: pointer;
     transition: color 0.2s;

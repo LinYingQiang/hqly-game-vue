@@ -107,7 +107,7 @@ function openGame(game) {
 .category-block { margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 12px; }
 .cat-header { display:flex; align-items:center; justify-content:space-between; padding: 0 12px; }
 .cat-left { display:flex; align-items:center; gap:8px; }
-.cat-icon { width:36px; height:36px; object-fit:cover; border-radius:6px; }
+.cat-icon { width:2rem; height:2rem; object-fit:cover; border-radius:6px; }
 .cat-name { color:#fff; font-weight:600; font-size:16px; }
 .cat-more { background:transparent; border:none; color:#f0c059; font-weight:600; }
 
@@ -120,7 +120,7 @@ function openGame(game) {
 .total { color: rgba(255,255,255,0.7); font-size:13px }
 .view-more { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#fff; padding:6px 10px; border-radius:6px; }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .game-icon { width:64px; height:64px }
-}
+} */
 </style>

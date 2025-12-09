@@ -18,6 +18,7 @@
   --van-cell-background: #1c1e23!important;
   --van-popup-background: #1c1e23!important;
   --van-nav-bar-title-text-color: #ffffff!important;
+  --van-field-input-text-color: #ffffff!important;
 }
 
 /* ----- 居中竖屏（仿 lobby ui contain）样式 -----
@@ -31,7 +32,7 @@
 html[data-ui-contain="1"] {
   max-width: var(--lobby__max-width);
   margin: 0 auto;
-  font-size: calc(var(--lobby__max-width) / (750 / var(--lobby__rem-unit))) !important;
+  font-size: calc(var(--lobby__max-width) / (450 / var(--lobby__rem-unit))) !important;
   background: #313843;
 }
 

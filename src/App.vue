@@ -24,7 +24,7 @@ html {
 }
 /* PC端使用更大的基准字体,因为容器较小 */
 html[data-isdesktop="1"] {
-  font-size: 18px;
+  font-size: 180px;
 }
 html body {
   margin: 0;
