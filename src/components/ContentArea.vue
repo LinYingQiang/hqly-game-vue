@@ -103,7 +103,7 @@ function openGame(game) {
 </script>
 
 <style scoped>
-.content-area { padding: 12px 0; }
+.content-area { padding: 0 0; }
 .category-block { margin-bottom: 18px; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 12px; }
 .cat-header { display:flex; align-items:center; justify-content:space-between; padding: 0 12px; }
 .cat-left { display:flex; align-items:center; gap:8px; }

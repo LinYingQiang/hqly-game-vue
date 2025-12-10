@@ -112,10 +112,13 @@ function onLogout() {
 
       <!-- header -->
       <header class="site-header">
-        <button class="menu-btn" @click="toggleMenu" aria-label="菜单">
-          <span class="iconfont">&#xe910;</span>
-        </button>
-        <img class="site-logo" src="/src/assets/images/logo.avif" alt="site logo" />
+        <div style="display: flex;align-items: center;;">
+          <button class="menu-btn" @click="toggleMenu" aria-label="菜单">
+            <span class="iconfont">&#xe910;</span>
+          </button>
+          <img class="site-logo" src="/src/assets/images/logo.avif" alt="site logo" />
+        </div>
+
         <div class="right-area">
           <template v-if="user.loggedIn">
             <span class="balance">余额: ¥{{ user.balance }}</span>
@@ -145,10 +148,10 @@ function onLogout() {
             text="🔱欢迎莅临全球顶级娱乐中心【AG娱乐】919.AG✨品质铸造，成就不凡 💎我们承诺：为客户提供最安全，最公平的博弈游戏，最优秀的服务，每日打码闯关，每日救援金，每周救援金，每月救援金，更多活动详情尽在优惠中心。✅牢记网址不迷路【官网：919.AG】和【备用网址：9191.AG】收藏并添加到桌面。"
         >
             <template #left-icon>
-                <img src="/src/assets/images/icon/icon_dt_pmd.avif" style="width: 30px;height: auto;">
+                <img src="/src/assets/images/icon/icon_dt_pmd.avif" style="width: 1.3rem;height: auto;">
             </template>
             <template #right-icon>
-                <img src="/src/assets/images/icon/icon_dt_1xx.avif" style="width: 40px;height: auto;">
+                <img src="/src/assets/images/icon/icon_dt_1xx.avif" style="width: 1.8rem;height: auto;">
             </template>
         </van-notice-bar>
         <!-- 菜单栏：一行横向可滑动，图上字下 -->
@@ -194,22 +197,24 @@ function onLogout() {
   box-sizing: border-box;
 }
 .ad-bar {
-    width: 100%;
-    height: 120px;
-    background: url('/src/assets/images/cjc1_style_1_bg.avif') no-repeat center;
+    width: 90%;
+    height: 6rem;
+    background: url('/src/assets/images/cjc1_style_1_bg.avif') no-repeat center center / cover;
     background-size: contain;
     margin: .8rem 0;
     position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .my-swipe .van-swipe-item {
     color: #fff;
     font-size: 20px;
     line-height: 150px;
     text-align: center;
-    background-color: #39a9ed;
     border-radius: 10px;
     width: 100%;
     margin-top: 20px;
+    padding: 0 .3rem;
 }
 .swipe-image {
     width: 100%;
@@ -290,7 +295,7 @@ function onLogout() {
   padding: calc(64px + 56px + 24px) 16px 0 16px;
 } */
 .home-page .content {
-  padding: 0 16px 0 16px;
+  padding: 0 .3rem 0 .3rem;
   /* 为顶部固定栏预留空间: 5vh(header) */
   padding-top: 5vh;
   /* 为底部导航预留空间 */
@@ -327,20 +332,21 @@ function onLogout() {
   margin: auto 0;
 }
 .site-logo {
-  height: 36px;
+  height: 2rem;
   object-fit: contain;
+  margin-left: .8rem;
 }
 .right-area { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; }
 .balance { color: #f0c059; font-weight: 600; }
 .deposit-btn, .login-btn, .register-btn, .logout-btn {
   background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 6px 10px;
+  color: #F0C059;
+  border: 1px solid #F0C059;
+  padding: .3rem 1.8rem;
   border-radius: 6px;
   font-size: 0.875rem;
 }
-.deposit-btn { background: #f0c059; color: #111; border: none; }
+.deposit-btn { background: #f0c059; color: #874404; border: none; }
 .side-menu { padding: 16px; color: #fff; }
 .side-menu h3 { margin: 0 0 12px 0; }
 .side-menu ul { list-style: none; padding: 0; margin: 0; }
@@ -360,8 +366,8 @@ button { margin-top: auto 0; }
 }
 .category-row {
   display: flex;
-  gap: 12px;
-  padding: 8px 6px;
+  gap: .23rem;
+  padding: 8px 0;
 }
 .category-item {
   flex: 0 0 60px; /* 固定宽度，防止换行 */
