@@ -3,7 +3,7 @@
     <div class="auth-popup">
       <!-- logo -->
       <div class="logo-row">
-        <img src="/src/assets/images/logo.avif" alt="logo" class="auth-logo" />
+        <img :src="logoImg" alt="logo" class="auth-logo" />
       </div>
 
       <!-- three lines of text -->
@@ -57,7 +57,10 @@
 
 <script setup>
 import { ref, watch, computed } from 'vue'
-import { useUserStore } from '/src/store/user'
+import { useUserStore } from '@/store/user'
+
+// 导入静态资源
+import logoImg from '@/assets/images/logo.avif'
 
 const props = defineProps({
   show: { type: Boolean, default: false },

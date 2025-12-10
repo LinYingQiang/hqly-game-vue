@@ -1,14 +1,28 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { ref, computed, onMounted } from 'vue'
-import BottomNav from '/src/components/BottomNav.vue'
-import SlidingMenu from '/src/components/SlidingMenu.vue'
-import NumberTicker from '/src/components/NumberTicker.vue'
-import ContentArea from '/src/components/ContentArea.vue'
-import AuthPopup from '/src/components/AuthPopup.vue'
-import { useUserStore } from '/src/store/user'
-import { useAppStore } from '/src/store'
-import {useCategoryStore} from '/src/store/category'
+import BottomNav from '@/components/BottomNav.vue'
+import SlidingMenu from '@/components/SlidingMenu.vue'
+import NumberTicker from '@/components/NumberTicker.vue'
+import ContentArea from '@/components/ContentArea.vue'
+import AuthPopup from '@/components/AuthPopup.vue'
+import { useUserStore } from '@/store/user'
+import { useAppStore } from '@/store'
+import {useCategoryStore} from '@/store/category'
+
+// 导入静态资源
+import downloadLogoImg from '@/assets/images/download_logo.avif'
+import logoImg from '@/assets/images/logo.avif'
+import swipImg from '@/assets/images/swip.avif'
+import iconDtPmdImg from '@/assets/images/icon/icon_dt_pmd.avif'
+import iconDt1xxImg from '@/assets/images/icon/icon_dt_1xx.avif'
+import bgPatternTile from '@/assets/bg_pattern_tile.png'
+import cjc1StyleBg from '@/assets/images/cjc1_style_1_bg.avif'
+import CunKuan from "@/components/CunKuan.vue";
+
+// CSS v-bind 需要的计算属性
+const bgPatternTileUrl = computed(() => `url(${bgPatternTile})`)
+const cjc1StyleBgUrl = computed(() => `url(${cjc1StyleBg})`)
 
 const router = useRouter()
 const user = useUserStore()
@@ -104,7 +118,7 @@ function onLogout() {
         <div class="left-group">
           <van-icon name="cross" class="close-icon" @click="closeBanner" size="20" />
           <div class="logo-wrap">
-            <img class="app-logo" src="/src/assets/images/download_logo.avif" alt="app logo" />
+            <img class="app-logo" :src="downloadLogoImg" alt="app logo" />
           </div>
         </div>
         <button class="download-btn" @click="download">立即下载</button>
@@ -116,7 +130,7 @@ function onLogout() {
           <button class="menu-btn" @click="toggleMenu" aria-label="菜单">
             <span class="iconfont">&#xe910;</span>
           </button>
-          <img class="site-logo" src="/src/assets/images/logo.avif" alt="site logo" />
+          <img class="site-logo" :src="logoImg" alt="site logo" />
         </div>
 
         <div class="right-area">
@@ -137,7 +151,7 @@ function onLogout() {
         <!-- 轮播图 -->
         <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
             <van-swipe-item>
-                <img src="/src/assets/images/swip.avif" class="swipe-image">
+                <img :src="swipImg" class="swipe-image">
             </van-swipe-item>
         </van-swipe>
         <!-- 通知消息栏 -->
@@ -148,10 +162,10 @@ function onLogout() {
             text="🔱欢迎莅临全球顶级娱乐中心【AG娱乐】919.AG✨品质铸造，成就不凡 💎我们承诺：为客户提供最安全，最公平的博弈游戏，最优秀的服务，每日打码闯关，每日救援金，每周救援金，每月救援金，更多活动详情尽在优惠中心。✅牢记网址不迷路【官网：919.AG】和【备用网址：9191.AG】收藏并添加到桌面。"
         >
             <template #left-icon>
-                <img src="/src/assets/images/icon/icon_dt_pmd.avif" style="width: 1.3rem;height: auto;">
+                <img :src="iconDtPmdImg" style="width: 1.3rem;height: auto;">
             </template>
             <template #right-icon>
-                <img src="/src/assets/images/icon/icon_dt_1xx.avif" style="width: 1.8rem;height: auto;">
+                <img :src="iconDt1xxImg" style="width: 1.8rem;height: auto;">
             </template>
         </van-notice-bar>
         <!-- 菜单栏：一行横向可滑动，图上字下 -->
@@ -193,13 +207,13 @@ function onLogout() {
 .home-page {
   min-height: 100vh;
   width: 100%;
-  background: #212328 url('/src/assets/bg_pattern_tile.png') repeat;
+  background: #212328 v-bind(bgPatternTileUrl) repeat;
   box-sizing: border-box;
 }
 .ad-bar {
     width: 90%;
     height: 6rem;
-    background: url('/src/assets/images/cjc1_style_1_bg.avif') no-repeat center center / cover;
+    background: v-bind(cjc1StyleBgUrl) no-repeat center center / cover;
     background-size: contain;
     margin: .8rem 0;
     position: relative;

@@ -17,7 +17,7 @@
       <div v-if="active === 'kf'" class="panel">
         <div class="kf-card">
           <div class="kf-top">
-            <img class="kf-avatar" src="/src/assets/images/icon/img_kf_kf01.avif" alt="客服" />
+            <img class="kf-avatar" :src="kfAvatarImg" alt="客服" />
             <div class="kf-text">
               <div class="kf-title">7×24在线客服</div>
               <div class="kf-sub">专业客服在线对话，为您解决遇到的问题。</div>
@@ -31,7 +31,7 @@
       <div v-else-if="active === 'announce'" class="panel">
           <div class="empty-wrap">
                 <div class="empty-inner">
-                <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
+                <img :src="noneImg" alt="none" class="empty-img" />
                 <div class="empty-text">暂无记录</div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
       <div v-else-if="active === 'notice'" class="panel">
                   <div class="empty-wrap">
                 <div class="empty-inner">
-                <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
+                <img :src="noneImg" alt="none" class="empty-img" />
                 <div class="empty-text">暂无记录</div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
       <div v-else-if="active === 'marquee'" class="panel">
                   <div class="empty-wrap">
                 <div class="empty-inner">
-                <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
+                <img :src="noneImg" alt="none" class="empty-img" />
                 <div class="empty-text">暂无记录</div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
       <div v-else-if="active === 'feedback'" class="panel">
                   <div class="empty-wrap">
                 <div class="empty-inner">
-                <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
+                <img :src="noneImg" alt="none" class="empty-img" />
                 <div class="empty-text">暂无记录</div>
                 </div>
             </div>
@@ -67,6 +67,10 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+
+// 导入静态资源
+import noneImg from '@/assets/images/icon/none.avif'
+import kfAvatarImg from '@/assets/images/icon/img_kf_kf01.avif'
 
 const router = useRouter()
 const tabs = [

@@ -66,7 +66,7 @@ select {
 
 @font-face {
   font-family: 'iconfont';
-  src: url('/src/assets/font_5du1nh9jled/iconfont.ttf') format('truetype');
+  src: url('@/assets/font_5du1nh9jled/iconfont.ttf') format('truetype');
 }
 
 .iconfont {

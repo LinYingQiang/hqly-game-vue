@@ -7,19 +7,19 @@
                 {
                     "eventId": 1,
                     "name": "新年活动",
-                    "img": "/src/assets/images/game/event1.avif",
+                    "img": "/assets/images/game/event1.avif",
                     "templateId": 1
                 },
                 {
                     "eventId": 2,
                     "name": "新年活动",
-                    "img": "/src/assets/images/game/event2.avif",
+                    "img": "/assets/images/game/event2.avif",
                     "templateId": 1
                 },
                 {
                     "eventId": 3,
                     "name": "新年活动",
-                    "img": "/src/assets/images/game/event3.avif",
+                    "img": "/assets/images/game/event3.avif",
                     "templateId": 1
                 }
             ]
@@ -31,19 +31,19 @@
                 {
                     "eventId": 1,
                     "name": "新年活动",
-                    "img": "/src/assets/images/game/event1.avif",
+                    "img": "/assets/images/game/event1.avif",
                     "templateId": 1
                 },
                 {
                     "eventId": 2,
                     "name": "新年活动",
-                    "img": "/src/assets/images/game/event2.avif",
+                    "img": "/assets/images/game/event2.avif",
                     "templateId": 1
                 },
                 {
                     "eventId": 3,
                     "name": "新年活动",
-                    "img": "/src/assets/images/game/event3.avif",
+                    "img": "/assets/images/game/event3.avif",
                     "templateId": 1
                 }
             ]

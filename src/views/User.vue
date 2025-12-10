@@ -39,7 +39,7 @@
 
     <div v-if="user.loggedIn" class="vip-section" >
       <div class="vip-card">
-        <img class="vip-bg" src="/src/assets/images/vip_bgdw.avif" alt="vip" />
+        <img class="vip-bg" :src="vipBgdwImg" alt="vip" />
         <div class="vip-left">
           <div class="vip-icon">0</div>
           <div class="g-container">
@@ -113,14 +113,23 @@ import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '../store/user'
 import AuthPopup from '../components/AuthPopup.vue'
-import BottomNav from '/src/components/BottomNav.vue'
+import BottomNav from '@/components/BottomNav.vue'
 import CunKuan from '../components/CunKuan.vue'
+
+// 导入静态资源
+import headerImg from '@/assets/images/header.avif'
+import iconWdMrtxImg from '@/assets/images/icon/icon_wd_mrtx.avif'
+import vipColor1Img from '@/assets/images/icon/style_1_vip_color1.avif'
+import vipBgdwImg from '@/assets/images/vip_bgdw.avif'
+
+// CSS v-bind 需要的计算属性
+const vipColor1ImgUrl = computed(() => `url(${vipColor1Img})`)
 
 const router = useRouter()
 const user = useUserStore()
 
 const avatarSrc = computed(() => {
-  return user.loggedIn ? '/src/assets/images/header.avif' : '/src/assets/images/icon/icon_wd_mrtx.avif'
+  return user.loggedIn ? headerImg : iconWdMrtxImg
 })
 
 const showAuth = ref(false)
@@ -263,7 +272,7 @@ function goTo(key) {
   flex: 4;
   width: 60px;
   height: 60px;
-  background: url('/src/assets/images/icon/style_1_vip_color1.avif') no-repeat center center / 100% 100%;
+  background: v-bind(vipColor1ImgUrl) no-repeat center center / 100% 100%;
   text-align: center;
   align-items: center;
   line-height: 60px;

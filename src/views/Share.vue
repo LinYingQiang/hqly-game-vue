@@ -46,16 +46,23 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+// 导入静态资源
+import downloadImg from '@/assets/images/download.png'
+import imgWx from '@/assets/images/icon/img_wx.png'
+import imgQq from '@/assets/images/icon/img_qq.png'
+import imgFacebook from '@/assets/images/icon/img_facebook.png'
+import imgTg from '@/assets/images/icon/img_tg.png'
+
 const router = useRouter()
-const qrSrc = '/src/assets/images/download.png'
+const qrSrc = downloadImg
 const inviteCode = 'INV12345'
 const inviteLink = `https://example.com/register?code=${inviteCode}`
 
 const apps = [
-  { name: 'Wechat', icon: '/src/assets/images/icon/img_wx.png' },
-  { name: 'QQ', icon: '/src/assets/images/icon/img_qq.png' },
-  { name: 'Facebook', icon: '/src/assets/images/icon/img_facebook.png' },
-  { name: 'Telegram', icon: '/src/assets/images/icon/img_tg.png' },
+  { name: 'Wechat', icon: imgWx },
+  { name: 'QQ', icon: imgQq },
+  { name: 'Facebook', icon: imgFacebook },
+  { name: 'Telegram', icon: imgTg },
 ]
 
 function onBack() { router.back() }

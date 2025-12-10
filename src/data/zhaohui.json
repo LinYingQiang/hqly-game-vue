@@ -7,19 +7,19 @@
                 {
                     "gameId": 1001,
                     "gameName": "WG",
-                    "gameIcon": "/src/assets/images/logo/16_N_BG_LOGO.avif",
+                    "gameIcon": "/assets/images/logo/16_N_BG_LOGO.avif",
                     "banlance": 15
                 },
                 {
                     "gameId": 1002,
                     "gameName": "BG",
-                    "gameIcon": "/src/assets/images/logo/16_N_BG_LOGO.avif",
+                    "gameIcon": "/assets/images/logo/16_N_BG_LOGO.avif",
                     "banlance": 0
                 },
                 {
                     "gameId": 1003,
                     "gameName": "WL",
-                    "gameIcon": "/src/assets/images/logo/52_N_WL_LOGO.avif",
+                    "gameIcon": "/assets/images/logo/52_N_WL_LOGO.avif",
                     "banlance": 0
                 }
             ]

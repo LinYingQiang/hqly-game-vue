@@ -4,7 +4,7 @@
     <div class="cunkuan-header">
         <div>支付方式</div>
         <div class="banlance">
-            <img src="/src/assets/images/icon/CNY.avif" class="yue-icon">
+            <img :src="cnyIcon" class="yue-icon">
             <span>0.00</span>
             <span class="iconfont" style="font-size: 0.8125rem;color: #f0c059;cursor: pointer;">&#xe644;</span>
         </div>
@@ -42,7 +42,7 @@
         <!-- 转账存款内容 -->
         <div class="pay-list">
             <div class="pay-item active">
-                <img src="/src/assets/images/payicon/icon_szhb_xnb.png" class="pay-icon" />
+                <img :src="xnbIcon" class="pay-icon" />
                 <div style="color: #f0c059;">虚拟币</div>
             </div>
         </div>
@@ -65,7 +65,17 @@
 
 <script setup>
 import { ref, watch, computed } from 'vue'
-import { useUserStore } from '/src/store/user'
+import { useUserStore } from '@/store/user'
+
+// 导入静态资源
+import cnyIcon from '@/assets/images/icon/CNY.avif'
+import payIcon1 from '@/assets/images/payicon/finance-1744709565803-763302.avif'
+import payIcon2 from '@/assets/images/payicon/finance-1744709547647-616038.avif'
+import payIcon3 from '@/assets/images/payicon/finance-1744960718913-924083.avif'
+import payIcon4 from '@/assets/images/payicon/finance-1744707823325-350303.avif'
+import payIcon5 from '@/assets/images/payicon/finance-1744710701080-813919.avif'
+import payIcon6 from '@/assets/images/payicon/finance-1745589056719-471716.avif'
+import xnbIcon from '@/assets/images/payicon/icon_szhb_xnb.png'
 
 const props = defineProps({
   show: { type: Boolean, default: false },
@@ -75,12 +85,12 @@ const emit = defineEmits(['update:show','success'])
 const user = useUserStore()
 const activeCat = ref('online')
 const payList = ref([
-    { id: 1, name: 'ABpay钱包', icon: '/src/assets/images/payicon/finance-1744709565803-763302.avif' },
-    { id: 2, name: '其他虚拟币钱包', icon: '/src/assets/images/payicon/finance-1744709547647-616038.avif' },
-    { id: 3, name: 'No钱包', icon: '/src/assets/images/payicon/finance-1744960718913-924083.avif' },
-    { id: 4, name: 'Upay钱包', icon: '/src/assets/images/payicon/finance-1744707823325-350303.avif' },
-    { id: 5, name: '波币钱包', icon: '/src/assets/images/payicon/finance-1744710701080-813919.avif' },
-    { id: 6, name: '钱能钱包', icon: '/src/assets/images/payicon/finance-1745589056719-471716.avif' },
+    { id: 1, name: 'ABpay钱包', icon: payIcon1 },
+    { id: 2, name: '其他虚拟币钱包', icon: payIcon2 },
+    { id: 3, name: 'No钱包', icon: payIcon3 },
+    { id: 4, name: 'Upay钱包', icon: payIcon4 },
+    { id: 5, name: '波币钱包', icon: payIcon5 },
+    { id: 6, name: '钱能钱包', icon: payIcon6 },
 ])
 const currentPay = ref(1)
 const showLocal = ref(props.show)

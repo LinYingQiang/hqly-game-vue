@@ -7,8 +7,8 @@
       <div class="vip-card-body">
         <div class="vip-left">
           <div class="level-circle">
-            <img src="/src/assets/images/icon/style_1_vip_style0.avif" alt="level" />
-            <img src="/src/assets/images/icon/style_1_vip_color1.avif" alt="level" />
+            <img :src="vipStyle0Img" alt="level" />
+            <img :src="vipColor1Img" alt="level" />
           </div>
           <div class="level-text">
             <div class="line1">距离 <span style="color: red;font-weight: bold;">VIP1</span></div>
@@ -50,6 +50,10 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+
+// 导入静态资源
+import vipStyle0Img from '@/assets/images/icon/style_1_vip_style0.avif'
+import vipColor1Img from '@/assets/images/icon/style_1_vip_color1.avif'
 
 const tabs = [
   { key: 'promote', label: '晋级奖金' },

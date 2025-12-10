@@ -2,7 +2,7 @@
     "data": [
         {
             "platformId": 0,
-            "icon": "/src/assets/images/logo/10_N_AG_LOGO.avif",
+            "icon": "/assets/images/logo/10_N_AG_LOGO.avif",
             "name": "PA",
             "toLink": "www.baidu.com"
         },

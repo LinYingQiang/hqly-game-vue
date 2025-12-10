@@ -1,31 +1,16 @@
 <template>
   <div class="empty-wrap">
     <div class="empty-inner">
-      <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
+      <img :src="noneImg" alt="none" class="empty-img" />
       <div class="empty-text">暂无记录</div>
-    <template>
-      <div class="empty-wrap">
-        <div class="empty-inner">
-          <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
-          <div class="empty-text">暂无记录</div>
-        <template>
-          <div class="empty-wrap">
-            <div class="empty-inner">
-              <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
-              <div class="empty-text">暂无记录</div>
-            </div>
-          </div>
-        <template>
-          <div class="empty-wrap">
-            <div class="empty-inner">
-              <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
-              <div class="empty-text">暂无记录</div>
-            </div>
-          </div>
-        </template>
+    </div>
+  </div>
+</template>
 
-        <script setup>
-        </script>
+<script setup>
+// 导入静态资源
+import noneImg from '@/assets/images/icon/none.avif'
+</script>
 
         <style scoped>
         .empty-wrap { display:flex; align-items:center; justify-content:center; height: calc(100vh - 56px); }

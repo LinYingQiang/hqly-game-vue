@@ -21,7 +21,7 @@
       <div v-else-if="active === 'accounts'" class="accounts">
         <div class="empty-wrap">
           <div class="empty-inner">
-            <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
+            <img :src="noneImg" alt="none" class="empty-img" />
             <div class="empty-text">暂无收款账户</div>
           </div>
         </div>
@@ -30,7 +30,7 @@
       <div v-else-if="active === 'history'" class="history">
         <div class="empty-wrap">
           <div class="empty-inner">
-            <img src="/src/assets/images/icon/none.avif" alt="none" class="empty-img" />
+            <img :src="noneImg" alt="none" class="empty-img" />
             <div class="empty-text">暂无记录</div>
           </div>
         </div>
@@ -43,6 +43,9 @@
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '../store/user'
+
+// 导入静态资源
+import noneImg from '@/assets/images/icon/none.avif'
 
 const router = useRouter()
 const user = useUserStore()
