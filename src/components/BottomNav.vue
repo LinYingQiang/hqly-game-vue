@@ -6,7 +6,7 @@
       :class="['nav-item', { active: $route.name === item.route }]"
       @click="goTo(item.route)"
     >
-      <van-icon :name="item.icon" :color="$route.name === item.route ? activeColor : defaultColor" size="24" style="font-size: 1.4rem;"/>
+      <van-icon :name="item.icon" :color="$route.name === item.route ? activeColor : defaultColor" size="24" style="font-size: 1.8rem;display: block;"/>
       <span :style="{ color: $route.name === item.route ? activeColor : defaultColor }">{{ item.label }}</span>
     </div>
   </nav>
@@ -20,7 +20,7 @@ const router = useRouter()
 const route = useRoute()
 
 const activeColor = '#FFD600'
-const defaultColor = '#FFD600'
+const defaultColor = '#68707B'
 
 const navItems = [
   { name: 'home', label: '首页', icon: 'wap-home-o', route: 'Home' },
@@ -99,7 +99,12 @@ function goTo(routeName) {
     color: white;
     cursor: pointer;
     transition: color 0.2s;
+
   }
+  .nav-item>span {
+      font-size: 0.8rem;
+      margin-top: 2px;
+    }
   .nav-item.active {
     color: #FFD600;
   }

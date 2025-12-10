@@ -111,7 +111,7 @@ function openGame(game) {
 .cat-name { color:#fff; font-weight:600; font-size:16px; }
 .cat-more { background:transparent; border:none; color:#f0c059; font-weight:600; }
 
-.games-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 12px; }
+.games-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 12px; }
 .game-card { display:flex; flex-direction:column; align-items:center; text-align:center; cursor: pointer;}
 .game-icon { width:100%; height:auto; object-fit:cover; border-radius:8px; }
 .game-title { margin-top:8px; color:#fff; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; width:100%; }

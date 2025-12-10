@@ -198,7 +198,7 @@ function onLogout() {
     height: 120px;
     background: url('/src/assets/images/cjc1_style_1_bg.avif') no-repeat center;
     background-size: contain;
-    margin: 20px 0;
+    margin: .8rem 0;
     position: relative;
 }
 .my-swipe .van-swipe-item {
@@ -270,7 +270,7 @@ function onLogout() {
   display: block;
 }
 .close-icon {
-  color: #fff;
+  color: #666666;
   cursor: pointer;
 }
 
@@ -379,7 +379,7 @@ button { margin-top: auto 0; }
 .cat-name {
   margin-top: 6px;
   font-size: 0.75rem;
-  color: #fff;
+  color: #68707B;
   text-align: center;
   width: 100%;
   white-space: nowrap;
