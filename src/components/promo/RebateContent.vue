@@ -63,10 +63,10 @@ const filteredItems = computed(() => {
 </script>
 
 <style scoped>
-.activity-wrap { display:flex; gap:12px; }
-.side-nav { width: 5rem; padding: 12px }
+.activity-wrap { display:flex; gap:12px;flex-direction: row; }
+.side-nav { width: 100px; padding: .3rem .7rem;font-size: 1rem;; }
 .side-nav ul { list-style:none; padding:0; margin:0 }
-.side-nav li { padding:.3rem .4rem; color:#adb6c3; cursor:pointer; border-radius:6px;font-size: 1.2rem; }
+.side-nav li { padding:.5rem 1rem; color:#adb6c3; cursor:pointer; border-radius:6px;font-size: 1rem; }
 .side-nav li.active { background: #efc05a; color:#874404 }
 .activity-content { flex:1; padding:12px }
 .content-scroll { height: calc(100vh - 130px); overflow-y:auto }
@@ -76,6 +76,6 @@ const filteredItems = computed(() => {
 .act-desc { margin:0 0 8px 0 }
 .act-actions { text-align:right }
 .act-btn { background:#f0c059; color:#111; border:none; padding:6px 10px; border-radius:6px }
-.event-img {width: 100%;height: 150px;}
+.event-img {width: 100%;height: auto;}
 
 </style>

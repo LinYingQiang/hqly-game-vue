@@ -68,29 +68,25 @@ function formatBalance(v) { return Number(v || 0).toFixed(2) }
 
 <style scoped>
 .recover-page {background: #202329;}
-.recover-card { display:flex; justify-content:space-between; align-items:center; padding:12px; background: #1c1e23; margin:12px; border-radius:8px }
+.recover-card { display:flex;font-size: .8rem; justify-content:space-between; align-items:center; padding:.4rem; background: #1c1e23; margin:12px; border-radius:8px }
 .card-left { display:flex; flex-direction:column }
-.current { font-size:1.2rem; font-weight:700; color:#68707b; }
-.note { font-size:1.2rem; color:#68707b; margin-top:6px }
+.current { font-size:.9rem; font-weight:700; color:#68707b; }
+.note { font-size:.9rem; color:#68707b; margin-top:6px }
 .card-right { display:flex }
 .recover-btn { background:#f0c059; color:#111; padding:8px 14px; border-radius:8px; border:none }
 
-.recover-body { display:flex; gap:12px; padding:12px }
-.left-nav { width:80px; display:flex; flex-direction:column; gap:8px }
-.cat { background:transparent;font-size: 1.1rem; border:none; padding:.6rem 1rem; text-align:center; color:#adb6c3; border-radius:6px }
+.recover-body { display:flex; gap:.1rem; padding:.4rem; flex-direction: row;}
+.left-nav { width:6rem; display:flex; flex-direction:column; gap:.3rem }
+.cat { background:transparent;font-size: .9rem; border:none; padding:.6rem 1rem; text-align:center; color:#adb6c3; border-radius:6px }
 .cat.active { background: #efc05a;  color: #874404;}
 
 .games-area { flex:1 }
 .games-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:12px }
 .game-card { background: rgba(29,31,36,0.6); padding:8px; border-radius:8px }
 .game-top { display:flex; align-items:center; gap:8px }
-.game-logo { width:40px; height:40px; object-fit:cover; border-radius:6px }
-.game-name { font-size:16px; color:#fff; font-weight:600 }
+.game-logo { width:2.5rem; height:2.5rem; object-fit:cover; border-radius:6px }
+.game-name { font-size:1rem; color:#fff; font-weight:600 }
 .game-bottom { margin-top:8px; color:#cbd3db }
 
-@media (max-width:720px) {
-  .recover-body { flex-direction:column }
-  .left-nav { width:100%; flex-direction:row; overflow:auto }
-  .games-grid { grid-template-columns: repeat(2, 1fr) }
-}
+
 </style>

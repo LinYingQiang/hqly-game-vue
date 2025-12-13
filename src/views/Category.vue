@@ -9,7 +9,7 @@
 
     <div class="category-container">
       <div class="search-wrap">
-        <van-search v-model="query" placeholder="搜索游戏/平台" show-action />
+        <van-search v-model="query" placeholder="搜索游戏/平台" right-icon="search" left-icon="none" />
       </div>
 
       <div class="body">
@@ -32,7 +32,7 @@
           <div class="games-grid">
             <div
               class="game-card"
-              v-for="g in filteredGames"
+              v-for="g in games"
               :key="(g.platformId ?? '') + '_' + (g.gameId ?? g.name)"
               @click="openGame(g)"
             >
@@ -46,17 +46,19 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useCategoryStore } from '/src/store/category'
 
 const route = useRoute()
 const router = useRouter()
-const categoryId = route.params.id
+const categoryId = route.query.gameCategoryId || 0
 
 const categoryStore = useCategoryStore()
 const query = ref('')
-const selectedPlatform = ref(null)
+const selectedPlatform = ref(0)
+const games = ref([])
+
 const title = ref('')
 
 onMounted(async () => {
@@ -66,8 +68,15 @@ onMounted(async () => {
   console.log(cat, categoryId)
     title.value = cat ? cat.name : '分类列表'
   if (cat && Array.isArray(cat.platforms) && cat.platforms.length) {
-    selectedPlatform.value = cat.platforms[0].platformId
+    selectedPlatform.value = parseInt(route.query.platformId) || cat.platforms[0].platformId
   }
+  filteredGames()
+})
+
+watch(() => route.query.platformId, () => {
+  console.log('platformId changed', route.query.platformId)
+  selectedPlatform.value = parseInt(route.query.platformId) || 0
+  filteredGames()
 })
 
 const currentCategory = computed(() => {
@@ -81,7 +90,7 @@ function flattenGames() {
   return currentCategory.value.platforms.flatMap(p => (p.games || []).map(g => ({ ...g, platformId: p.platformId })))
 }
 
-const filteredGames = computed(() => {
+const filteredGames = () => {
   const all = flattenGames()
   let list = all
   if (selectedPlatform.value !== null && selectedPlatform.value !== undefined) {
@@ -91,11 +100,14 @@ const filteredGames = computed(() => {
     const q = query.value.trim().toLowerCase()
     list = list.filter(g => (g.name || '').toLowerCase().includes(q))
   }
-  return list
-})
+  games.value = list
+  console.log('filteredGames', list)
+}
 
 function selectPlatform(id) {
-  selectedPlatform.value = id
+  router.push({name: 'Category', query: { ...route.query, platformId: id } })
+  selectPlatform.value = id
+  filteredGames()
 }
 
 function ensureUrl(url) {
@@ -109,30 +121,25 @@ function openGame(game) {
   if (url) window.open(url, '_blank')
 }
 
-function onBack() { router.back() }
+function onBack() { router.push('/') }
 </script>
 
 <style scoped>
-.category-container { padding: 12px; }
+.category-container { padding: .5rem; }
 .search-wrap { padding: 8px 0; }
-.body { display:flex; gap: 12px; }
-.platforms { width: 80px; background: transparent; }
+.search-wrap ::v-deep .van-field__right-icon { color: #f0c059!important; }
+.body { display:flex; gap: .5rem; flex-direction: row;}
+.platforms { width: 4.5rem; background: transparent; }
 .platforms ul { list-style:none; padding:0; margin:0; }
-.platforms li { padding:8px; display:flex;flex-direction: column; align-items:center; gap:8px; cursor:pointer; border-radius:8px; color:#fff }
+.platforms li { padding:.15rem; display:flex;flex-direction: column; align-items:center; gap:0; cursor:pointer; border-radius:8px; color:#fff }
 .platforms li.active { background: rgb(239, 192, 90); }
-.plat-icon { width:40px; height:40px; object-fit:cover; border-radius:4px }
+.plat-icon { width:1.5rem; height:1.5rem; object-fit:cover; border-radius:4px }
 .plat-name { font-size:13px }
 .games { flex:1 }
 .games-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .game-card { display:flex; flex-direction:column; align-items:center; text-align:center; cursor:pointer }
 .game-icon { width:100%; height:auto; object-fit:cover; border-radius:8px }
-.game-title { margin-top:8px; color:#fff; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
+.game-title { margin-top:8px; color:#fff; font-size:1rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis }
 
-@media (max-width: 720px) {
-  .body { flex-direction: column; }
-  .platforms { width: 100%; display:flex; overflow:auto }
-  .platforms ul { display:flex; gap:8px }
-  .platforms li { flex: 0 0 auto }
-  .games-grid { grid-template-columns: repeat(2, 1fr); }
-}
+
 </style>

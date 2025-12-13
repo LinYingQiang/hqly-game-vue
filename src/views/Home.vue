@@ -11,6 +11,7 @@ import { useAppStore } from '@/store'
 import {useCategoryStore} from '@/store/category'
 
 // 导入静态资源
+import cnyIcon from '@/assets/images/icon/CNY.avif'
 import downloadLogoImg from '@/assets/images/download_logo.avif'
 import logoImg from '@/assets/images/logo.avif'
 import swipImg from '@/assets/images/swip.avif'
@@ -135,9 +136,12 @@ function onLogout() {
 
         <div class="right-area">
           <template v-if="user.loggedIn">
-            <span class="balance">余额: ¥{{ user.balance }}</span>
+            <div class="banlance">
+                <img :src="cnyIcon" class="yue-icon">
+                <span class="number">0.00</span>
+                <span class="iconfont" style="font-size: 0.8125rem;color: #f0c059;cursor: pointer;">&#xe644;</span>
+            </div>
             <button class="deposit-btn" @click="router.push({ name: 'Deposit' })">存款</button>
-            <button class="logout-btn" @click="onLogout">退出</button>
           </template>
           <template v-else>
             <button class="deposit-btn" @click="openAuth('login')">登录</button>
@@ -210,12 +214,13 @@ function onLogout() {
   background: #212328 v-bind(bgPatternTileUrl) repeat;
   box-sizing: border-box;
 }
+
 .ad-bar {
     width: 90%;
     height: 6rem;
     background: v-bind(cjc1StyleBgUrl) no-repeat center center / cover;
     background-size: contain;
-    margin: .8rem 0;
+    margin: 0 0;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -227,7 +232,7 @@ function onLogout() {
     text-align: center;
     border-radius: 10px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 0;
     padding: 0 .3rem;
 }
 .swipe-image {
@@ -258,11 +263,11 @@ function onLogout() {
   }
 }
 .download-banner {
-  height: 44px;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 12px;
+  padding: 0 .4rem;
   background: rgba(29,31,36,0.98);
   border-bottom: 1px solid rgba(255,255,255,0.03);
 }
@@ -270,7 +275,7 @@ function onLogout() {
   background: transparent;
   border: none;
   color: #fff;
-  font-size: 15px;
+  font-size: .8rem;
   margin-right: 8px;
   cursor: pointer;
 }
@@ -284,7 +289,7 @@ function onLogout() {
   align-items: center;
 }
 .download-banner .app-logo {
-  height: 34px;
+  height: 1.5rem;
   object-fit: contain;
   display: block;
 }
@@ -297,9 +302,9 @@ function onLogout() {
   background: #f0c059;
   color: #fff;
   border: none;
-  padding: 1px 8px;
+  padding: .3rem .8rem;
   border-radius: 6px;
-  height: 3vh;
+  font-size: .6rem;
   cursor: pointer;
   white-space: nowrap;
   flex: 0  auto;
@@ -311,7 +316,7 @@ function onLogout() {
 .home-page .content {
   padding: 0 .3rem 0 .3rem;
   /* 为顶部固定栏预留空间: 5vh(header) */
-  padding-top: 5vh;
+  padding-top: 5rem;
   /* 为底部导航预留空间 */
   padding-bottom: calc(70px + env(safe-area-inset-bottom));
   padding-bottom: calc(70px + constant(safe-area-inset-bottom));
@@ -327,7 +332,7 @@ function onLogout() {
   width: 0;
 }
 .site-header {
-  height: 5vh;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -356,7 +361,7 @@ function onLogout() {
   background: transparent;
   color: #F0C059;
   border: 1px solid #F0C059;
-  padding: .3rem 1.8rem;
+  padding: .3rem 1.3rem;
   border-radius: 6px;
   font-size: 0.875rem;
 }

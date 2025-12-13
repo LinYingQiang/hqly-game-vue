@@ -4,7 +4,7 @@
       left-text=""
       left-arrow
       @click-left="onBack"
-      style="font-size: 1.6em;"
+      style="font-size: 2rem;"
     >
       <template #right>
         <div class="top-tabs">
@@ -96,7 +96,7 @@ onMounted(() => {
 .act-desc { margin:0 0 8px 0 }
 .act-actions { text-align:right }
 .act-btn { background:#f0c059; color:#111; border:none; padding:6px 10px; border-radius:6px }
-.top-tabs { display:flex; gap:8px }
+.top-tabs { display:flex; gap:8px;justify-content: first baseline; }
 .top-tab { background:transparent; border:none; color:#fff; padding:6px 8px; position:relative }
 .top-tab.active::after { content: ''; position:absolute; left:0; right:0; height:3px; background:#f0c059; bottom:-6px }
 

@@ -12,9 +12,9 @@
 import noneImg from '@/assets/images/icon/none.avif'
 </script>
 
-        <style scoped>
-        .empty-wrap { display:flex; align-items:center; justify-content:center; height: calc(100vh - 56px); }
-        .empty-inner { text-align:center; color:#cbd3db }
-        .empty-img { width:96px; height:96px; object-fit:contain; opacity:0.9 }
-        .empty-text { margin-top:12px; font-size:16px; color:#fff }
-        </style>
+<style scoped>
+.empty-wrap { display:flex; align-items:center; justify-content:center; height: calc(100vh - 56px); }
+.empty-inner { text-align:center; color:#cbd3db }
+.empty-img { width:96px; height:96px; object-fit:contain; opacity:0.9 }
+.empty-text { margin-top:12px; font-size:16px; color:#fff }
+</style>

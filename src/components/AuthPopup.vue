@@ -15,26 +15,26 @@
 
       <!-- nav: login / register -->
       <div class="nav-row">
-        <button :class="['nav-item', mode === 'login' ? 'active' : '']" @click="mode = 'login'">登录</button>
         <button :class="['nav-item', mode === 'register' ? 'active' : '']" @click="mode = 'register'">注册</button>
+        <button :class="['nav-item', mode === 'login' ? 'active' : '']" @click="mode = 'login'">登录</button>
       </div>
 
       <!-- form -->
       <div class="form-area">
         <template v-if="mode === 'login'">
-          <van-field v-model="form.username" placeholder="请输入用户名" label="用户名" />
-          <van-field v-model="form.password" type="password" placeholder="请输入密码" label="密码" />
+          <van-field left-icon="user" :rules="[{ required: true }]" v-model="form.username" placeholder="请输入用户名" clearable />
+          <van-field left-icon="lock" :rules="[{ required: true }]" v-model="form.password" type="password" placeholder="请输入密码" clearable />
         </template>
         <template v-else>
-          <van-field v-model="form.username" placeholder="请输入用户名" label="用户名" />
-          <van-field v-model="form.password" type="password" placeholder="请输入密码" label="密码" />
-          <van-field v-model="form.confirm" type="password" placeholder="确认密码" label="确认密码" />
+          <van-field left-icon="user" :rules="[{ required: true }]" v-model="form.username" placeholder="请输入用户名" />
+          <van-field left-icon="lock" :rules="[{ required: true }]" v-model="form.password" type="password" placeholder="请输入密码"/>
+          <van-field left-icon="lock" :rules="[{ required: true, validator: validateConfirm }]" v-model="form.confirm" type="password" placeholder="确认密码" />
         </template>
       </div>
 
       <!-- user agreement -->
       <div class="agreement">
-        <van-checkbox v-model="agree" />
+        <van-checkbox v-model="agree" icon-size="1rem" />
         <div class="agree-text">我已阅读并同意 <a href="#">用户协议</a> 与 <a href="#">隐私政策</a></div>
       </div>
 
@@ -132,7 +132,7 @@ function onTrial() {
   text-align:center;
   color: #cbd3db;
   margin-bottom:8px;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.6;
 }
 .nav-row { display:flex; justify-content:center; gap:154px; margin: 8px 0; }
@@ -142,9 +142,12 @@ function onTrial() {
   color: #fff;
   padding: 6px 0;
   position: relative;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
-.nav-item.active::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #f0c059; bottom: -6px }
+.nav-item.active {
+  color: #f0c059;
+}
+.nav-item.active::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #f0c059;color: #f0c059; bottom: -6px }
 .form-area { padding: 8px 12px }
 .agreement {
   display:flex;
@@ -152,18 +155,18 @@ function onTrial() {
   gap:8px;
   padding: 6px 12px;
   color: #cbd3db;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
 }
 .agree-text a { color: #f0c059 }
 .submit-row { display:flex; justify-content:center; padding: 12px }
 .submit-btn {
   background: #f0c059;
-  color:#111;
+  color:#874404;
   border:none;
-  padding: 10px 24px;
+  padding: .4rem .5rem;
   border-radius:8px;
-  font-weight:700;
-  font-size: 1rem;
+  font-size: .9rem;
+  width: 100%;
 }
 .bottom-links {
   display:flex;
@@ -175,4 +178,8 @@ function onTrial() {
 .bottom-links a { color: #f0c059; cursor:pointer }
 .close-row { display:flex; justify-content:center; padding: 8px 12px;position: absolute;bottom: -60px;;}
 .close-btn { background: transparent; color:#cbd3db; border: 1px solid rgba(255,255,255,0.06); padding:6px 12px; border-radius:8px }
+
+.form-area ::v-deep .van-field__control {
+  font-size: .9rem;
+}
 </style>

@@ -14,13 +14,15 @@
                             "gameId": 0,
                             "name": "游戏1",
                             "icon": "/assets/images/game/custom.avif",
-                            "toLink": "www.baidu.com"
+                            "toLink": "www.baidu.com",
+                            "toCategoryLink": "/category?gameCategoryId=0&platformId=0"
                         },
                         {
                             "gameId": 1,
                             "name": "游戏2",
                             "icon": "/assets/images/game/game2.avif",
-                            "toLink": "www.baidu.com"
+                            "toLink": "www.baidu.com",
+                            "toCategoryLink": "/category?gameCategoryId=0&platformId=0"
                         }
                     ]
                 },
@@ -33,13 +35,15 @@
                             "gameId": 0,
                             "name": "游戏1",
                             "icon": "/assets/images/game/game3.avif",
-                            "toLink": "www.baidu.com"
+                            "toLink": "www.baidu.com",
+                            "toCategoryLink": "/category?gameCategoryId=0&platformId=1"
                         },
                         {
                             "gameId": 1,
                             "name": "游戏2",
                             "icon": "/assets/images/game/game4.avif",
-                            "toLink": "www.baidu.com"
+                            "toLink": "www.baidu.com",
+                            "toCategoryLink": "/category?gameCategoryId=0&platformId=1"
                         }
                     ]
                 },
@@ -52,13 +56,15 @@
                             "gameId": 0,
                             "name": "游戏1",
                             "icon": "/assets/images/game/game2.avif",
-                            "toLink": "www.baidu.com"
+                            "toLink": "www.baidu.com",
+                            "toCategoryLink": "/category?gameCategoryId=0&platformId=2"
                         },
                         {
                             "gameId": 1,
                             "name": "游戏2",
                             "icon": "/assets/images/game/game3.avif",
-                            "toLink": "www.baidu.com"
+                            "toLink": "www.baidu.com",
+                            "toCategoryLink": "/category?gameCategoryId=0&platformId=2"
                         }
                     ]
                 },
@@ -71,13 +77,15 @@
                             "gameId": 0,
                             "name": "游戏1",
                             "icon": "/assets/images/game/game2.avif",
-                            "toLink": "www.baidu.com"
+                            "toLink": "www.baidu.com",
+                            "toCategoryLink": "/category?gameCategoryId=0&platformId=3"
                         },
                         {
                             "gameId": 1,
                             "name": "游戏2",
                             "icon": "/assets/images/game/game3.avif",
-                            "toLink": "www.baidu.com"
+                            "toLink": "www.baidu.com",
+                            "toCategoryLink": "/category?gameCategoryId=0&platformId=3"
                         }
                     ]
                 }

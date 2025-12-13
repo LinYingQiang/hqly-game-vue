@@ -59,7 +59,6 @@ input[type="email"],
 input[type="search"],
 textarea,
 select {
-  font-size: 16px !important;
   /* iOS 会在字体小于16px时自动放大 */
 }
 

@@ -13,8 +13,9 @@ const routes = [
   }
   ,
   {
-    path: '/category/:id',
+    path: '/category',
     name: 'Category',
+    query: { gameCategoryId: 0, platformId: 0 },
     component: () => import('../views/Category.vue')
   }
   ,

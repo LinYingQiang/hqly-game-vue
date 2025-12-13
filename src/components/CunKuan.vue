@@ -1,20 +1,20 @@
 <template>
-  <van-popup position="bottom" v-model:show="showLocal" :style="{height: '90vh', padding: '16px'}" :overlay="true">
+  <van-popup position="bottom" v-model:show="showLocal" :style="{height: '90vh', padding: '.3rem'}" :overlay="true">
     <van-nav-bar left-arrow @click-left="close" title="存款"></van-nav-bar>
     <div class="cunkuan-header">
         <div>支付方式</div>
-        <div class="banlance">
-            <img :src="cnyIcon" class="yue-icon">
-            <span>0.00</span>
-            <span class="iconfont" style="font-size: 0.8125rem;color: #f0c059;cursor: pointer;">&#xe644;</span>
-        </div>
+            <div class="banlance">
+                <img :src="cnyIcon" class="yue-icon">
+                <span class="number">0.00</span>
+                <span class="iconfont" style="font-size: 0.8125rem;color: #f0c059;cursor: pointer;">&#xe644;</span>
+            </div>
     </div>
     <div class="top-cats">
       <button :class="['cat-btn', { active: activeCat==='online' }]" @click="activeCat = 'online'">
-        <span class="iconfont"  style="font-size: 0.8125rem;color: #f0c059;cursor: pointer;">&#xe6b8;</span>&nbsp;在线存款
+        <span class="iconfont"  style="font-size: 1.4rem;color: #f0c059;cursor: pointer;">&#xe6b8;</span>&nbsp;在线存款
     </button>
     <button :class="['cat-btn', { active: activeCat==='zhuanzhang' }]" @click="activeCat = 'zhuanzhang'">
-        <span class="iconfont"  style="font-size: 0.8125rem;color: #f0c059;cursor: pointer;">&#xe67c;</span>&nbsp;转账存款
+        <span class="iconfont"  style="font-size: 1.4rem;color: #f0c059;cursor: pointer;">&#xe67c;</span>&nbsp;转账存款
     </button>
     </div>
 
@@ -162,11 +162,11 @@ function onTrial() {
     flex-direction: row;
     align-items: center;
     justify-content:first baseline;
-    padding: 4px 10px;
+    padding: .3rem .3rem;
     border-radius: 8px;
     cursor: pointer;
-    height: 60px;
-    font-size: 0.875rem;
+    height: auto;
+    font-size: 0.775rem;
     border: .7px solid rgba(255, 255, 255, .7);
     color: #fff!important;
 }
@@ -175,9 +175,9 @@ function onTrial() {
     color: #f0c059;
 }
 .pay-icon {
-    width: 35px;
-    height: 35px;
-    margin-right: 8px;
+    width: 2rem;
+    height: 2rem;
+    margin-right: .1rem;
 }
 
 .cunkuan-header {

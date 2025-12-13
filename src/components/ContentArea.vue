@@ -82,7 +82,7 @@ function loadMore(cat) {
 function onViewMore(cat) {
   // header 的更多仍然尝试进入分类页（如果存在），footer 的查看更多会加载更多
   try {
-    router.push({ name: 'Category', params: { id: cat.categoryId } })
+    router.push({ name: 'Category', query: { gameCategoryId: cat.categoryId, platformId: cat.platforms[0].platformId } })
   } catch (e) {
     console.log('view more', cat)
   }
@@ -96,6 +96,11 @@ function ensureUrl(url) {
 
 function openGame(game) {
   const url = ensureUrl(game.toLink || game.link || '')
+  const categoryUrl = game.toCategoryLink || ''
+  if (categoryUrl) {
+    router.push(categoryUrl)
+    return
+  }
   if (!url) return
   // 在新窗口打开
   window.open(url, '_blank')
