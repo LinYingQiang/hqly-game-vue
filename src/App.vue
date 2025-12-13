@@ -1,6 +1,20 @@
 <script setup>
 // App root simply renders the adaptive layout which in turn renders router views
+import { onMounted } from 'vue'
 import MobilePcWrapper from './layout/MobilePcWrapper.vue'
+import { useFingerprintStore } from '@/store/fingerprint'
+
+const fingerprintStore = useFingerprintStore()
+
+onMounted(async () => {
+  // 初始化设备指纹
+  try {
+    const visitorId = await fingerprintStore.init()
+    console.log('设备指纹 ID:', visitorId)
+  } catch (error) {
+    console.error('设备指纹初始化失败:', error)
+  }
+})
 </script>
 
 <template>
