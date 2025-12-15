@@ -22,7 +22,11 @@
 
       <div class="cat-footer">
         <div class="total">共 {{ getGames(cat).length }} 款游戏</div>
-        <button class="view-more" @click.prevent="loadMore(cat)">查看更多</button>
+        <button v-if="moreType" class="view-more" @click.prevent="loadMore(cat)">查看更多&nbsp;<svg width=".8rem" height=".8rem" fill="currentColor" class="" style="width: inherit; height: inherit;" viewBox="0 0 11.996 12.008">
+  <path id="7b5aba40a3ed19db01202235ccc10e36-comm_icon_jzgd" d="M18645,17402a.534.534,0,0,1-.389-.141l-5.473-5.65a.5.5,0,0,1,0-.691.453.453,0,0,1,.67,0l5.191,5.34,5.182-5.34a.451.451,0,0,1,.668,0,.485.485,0,0,1,0,.691l-5.467,5.65a.549.549,0,0,1-.354.141Zm0-5.373a.479.479,0,0,1-.389-.15l-5.473-5.641a.5.5,0,0,1,0-.7.463.463,0,0,1,.67,0l5.191,5.34,5.182-5.34a.46.46,0,0,1,.668,0,.492.492,0,0,1,0,.7l-5.467,5.641a.489.489,0,0,1-.342.152Z" transform="translate(-18639 -17389.996)"></path>
+
+</svg></button>
+      <span v-else  class="view-more">已加载完成</span>
       </div>
     </section>
   </div>
@@ -35,6 +39,8 @@ import { useRouter } from 'vue-router'
 const props = defineProps({
   categories: { type: Array, default: () => [] }
 })
+
+const moreType = ref(true)
 
 function getId(cat) {
   if (!cat) return ''
@@ -77,6 +83,10 @@ function loadMore(cat) {
   const current = visibleCounts.value[id] ?? 6
   // 每次增加 9
   visibleCounts.value[id] = Math.min(total, current + 9)
+  // 如果当前可见数量等于总数，则隐藏查看更多按钮
+  if (visibleCounts.value[id] === total) {
+    moreType.value = false
+  }
 }
 
 function onViewMore(cat) {
@@ -123,7 +133,7 @@ function openGame(game) {
 
 .cat-footer { display:flex;flex-direction: column; align-items:center; justify-content:space-between; padding: 0 12px; margin-top:8px; }
 .total { color: rgba(255,255,255,0.7); font-size:13px }
-.view-more { background:transparent; border:1px solid rgba(255,255,255,0.06); color:#fff; padding:6px 10px; border-radius:6px; }
+.view-more { background:transparent; color:#68707b; padding:6px 10px; border-radius:6px; font-size: .9rem;}
 
 /* @media (max-width: 480px) {
   .game-icon { width:64px; height:64px }
