@@ -13,8 +13,23 @@
           <div class="hint">请先登录或注册</div>
         </template>
         <template v-else>
-          <div class="username">{{ user.username }}</div>
-          <div class="meta">ID: {{ userId }} <span class="sep">|</span>             
+          <div class="username">{{ user.username }}<CopyIcon 
+            color="#f0c059"
+            style="width: 1rem; height: 1rem; color: #f0c059; cursor: pointer; margin-left: .3rem;display: inline;" 
+            @click="() => { 
+              navigator.clipboard.writeText(userId); 
+              van.Toast.success('用户ID已复制到剪贴板'); 
+            }"
+          />
+          </div>
+          <div class="meta">ID: {{ userId }} <CopyIcon 
+            color="#f0c059"
+            style="width: 1rem; height: 1rem; color: #f0c059; cursor: pointer; margin-left: .3rem;display: inline;" 
+            @click="() => { 
+              navigator.clipboard.writeText(userId); 
+              van.Toast.success('用户ID已复制到剪贴板'); 
+            }"
+          /><span class="sep">|</span>             
             <div class="banlance">
                 <img :src="cnyIcon" class="yue-icon">
                 <span class="number">0.00</span>
@@ -35,10 +50,12 @@
 
     <div class="quick-actions">
       <div class="qa-item" @click="onWithdraw">
-        <van-icon name="coupon" style="font-size: 2.3em;color: #f0c059;"/><div class="qa-label">提现</div>
+        <van-icon name="coupon" style="font-size: 1.6rem;color: #f0c059;"/><div class="qa-label">提现</div>
       </div>
       <div class="qa-item" @click="onDeposit">
-        <van-icon name="pending-payment" style="font-size: 2.3em;color: #f0c059;" /><div class="qa-label">存款</div>
+        <!-- <van-icon name="pending-payment" style="font-size: 1.6rem;color: #f0c059;" /> -->
+        <img :src="cunkuanImg" style="width: 1.6rem; height: 1.6rem;" alt="cunkuan" />
+        <div class="qa-label">存款</div>
       </div>
     </div>
 
@@ -120,16 +137,20 @@ import { useUserStore } from '../store/user'
 import AuthPopup from '../components/AuthPopup.vue'
 import BottomNav from '@/components/BottomNav.vue'
 import CunKuan from '../components/CunKuan.vue'
+import { Copy as CopyIcon } from 'lucide-vue-next';
 
 // 导入静态资源
+import cunkuanImg from '@/assets/images/icon/gif_profile_style1.webp'
 import cnyIcon from '@/assets/images/icon/CNY.avif'
 import headerImg from '@/assets/images/header.avif'
 import iconWdMrtxImg from '@/assets/images/icon/icon_wd_mrtx.avif'
 import vipColor1Img from '@/assets/images/icon/style_1_vip_color1.avif'
 import vipBgdwImg from '@/assets/images/vip_bgdw.avif'
+import userBgImg from '@/assets/images/user_bg.jpg'
 
 // CSS v-bind 需要的计算属性
 const vipColor1ImgUrl = computed(() => `url(${vipColor1Img})`)
+const userBg = computed(() => `url(${userBgImg})`)
 
 const router = useRouter()
 const user = useUserStore()
@@ -211,14 +232,31 @@ function goTo(key) {
   padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   padding-bottom: calc(1rem + constant(safe-area-inset-bottom));
   color:#fff;
-  background: #202329 url();
+  background: #1e2126;
+  background-image: v-bind(userBg);
+  background-size: 100% 20rem;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
-.user-card { display:flex; align-items:center; padding:.3rem; gap:.2rem; background: rgba(29,31,36,0.6); border-radius:8px; margin:12px }
+.user-page ::v-deep .van-nav-bar__content {
+  height: 2rem;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+}
+.user-page ::v-deep .van-nav-bar {
+  background: rgba(0, 0, 0, 0);
+}
+.user-page ::v-deep .van-hairline--bottom:after {
+  border: none;
+}
+.user-card { display:flex; align-items:center; padding:0 .3rem; gap:.2rem; 
+  background: rgba(29,31,36,0); 
+  border-radius:8px; margin:12px }
 .avatar { width:3rem; height:3rem; border-radius:8px; object-fit:cover }
 .user-info { flex: 0 0 auto }
 .hint { font-size:1rem; color:#cbd3db;}
-.username { font-size:1.125rem; font-weight:600;text-align: left;color: #fff; }
-.meta { font-size:0.8125rem; color:#cbd3db; margin-top:6px; display: flex; align-items: center; }
+.username { font-size:.9rem;text-align: left;color: #fff; }
+.meta { font-size:1rem; color:#fff; margin-top:6px; display: flex; align-items: center; }
 .sep { margin:0 8px; color:#cbd3db }
 .auth-actions { display:flex; gap:8px; margin-left: auto }
 .btn { padding:8px 12px; border-radius:6px; font-weight:600; font-size:0.875rem; }
@@ -226,7 +264,7 @@ function goTo(key) {
 .btn.register { background:transparent; color:#f0c059; border:1px solid #f0c059 }
 .btn.logout { background:transparent; color:#cbd3db; border:1px solid rgba(255,255,255,0.06) }
 .logged-in { border-radius: 50%; }
-.quick-actions { display:flex; justify-content:space-around; padding:12px }
+.quick-actions { display:flex; justify-content:space-around; padding:0 12px }
 .qa-item { display:flex; flex-direction:column; align-items:center; gap:8px }
 .qa-label { font-size:0.875rem; color:#cbd3db }
 .vip-card { 
@@ -291,7 +329,5 @@ function goTo(key) {
 .cells ::v-deep .van-cell__title { text-align: left; font-size: 1rem ;color: #ffffff;margin-left: 10px;}
 .cells ::v-deep .van-cell__icon { margin-right: 10px; display:inline-flex; align-items:center }
 .cells ::v-deep .van-icon { font-size: 1.3rem; }
-@media (max-width:720px) {
-  .user-card { margin:8px }
-}
+
 </style>
