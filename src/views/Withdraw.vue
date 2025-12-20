@@ -28,12 +28,7 @@
       </div>
 
       <div v-else-if="active === 'history'" class="history">
-        <div class="empty-wrap">
-          <div class="empty-inner">
-            <img :src="noneImg" alt="none" class="empty-img" />
-            <div class="empty-text">暂无记录</div>
-          </div>
-        </div>
+        <TiXianRecord/>
       </div>
     </div>
   </div>
@@ -42,9 +37,10 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { useUserStore } from '../store/user'
-import TiXian from '../components/withdraw/TiXian.vue'
-import ShouKuan from '../components/withdraw/ShouKuan.vue'
+import { useUserStore } from '/src/store/user'
+import TiXian from '/src/components/withdraw/TiXian.vue'
+import ShouKuan from '/src/components/withdraw/ShouKuan.vue'
+import TiXianRecord from "/src/components/withdraw/TiXianRecord.vue"
 // 导入静态资源
 import noneImg from '@/assets/images/icon/none.avif'
 
