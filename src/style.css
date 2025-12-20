@@ -21,6 +21,15 @@
   --van-field-input-text-color: #ffffff!important;
   --van-radio-label-color: #ffffff!important;
   --skin__leftnav_active: #874404;
+  --el-fill-color-blank: #1c1e23!important;
+  --el-bg-color-overlay: #1c1e23!important;
+  --el-boder-color-light: #313843!important;
+  --el-border-color: #313843!important;
+  --el-border-active-color: #ffffff!important;
+  --van-password-input-background:#1c1e23!important;
+  --van-password-input-text-color: #ffffff!important;
+  --van-password-input-dot-color:#ffffff!important;
+  --van-password-input-radius: .5rem!important;
 }
 
 /* ----- 居中竖屏（仿 lobby ui contain）样式 -----
